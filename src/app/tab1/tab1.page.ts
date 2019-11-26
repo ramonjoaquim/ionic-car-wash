@@ -43,6 +43,11 @@ export class Tab1Page implements OnInit{
       this.showAlert("placa");
       return;
     }
+
+    if(this.placa.length != 8){
+      this,this.validaPlaca();
+      return;
+    }
     
     if(this.cor===""){
       this.showAlert("cor");
@@ -103,6 +108,18 @@ export class Tab1Page implements OnInit{
   showAlert(msg : string) {
     this.alertController
       .create({ header: `Preecha o campo ${msg}!`,
+      buttons: [{
+        text: 'OK'
+      }]    
+    })
+      .then(a => a.present());
+      
+  }
+
+
+  validaPlaca() {
+    this.alertController
+      .create({ header: `Placa inválida!`,
       buttons: [{
         text: 'OK'
       }]    
