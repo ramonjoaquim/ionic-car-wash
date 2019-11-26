@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Status
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>  
+      <ion-item>
+        <ion-label>Cliente</ion-label>
+        <ion-select [(ngModel)]="cliente" okText="Selecionar" cancelText="Cancelar" placeholder="Selecione">
+          <ion-select-option *ngFor="let c of clientes">{{c}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>  
+      <ion-item>
+        <ion-label>Veículo</ion-label>
+        <ion-select [(ngModel)]="veiculo" okText="Selecionar" cancelText="Cancelar" placeholder="Selecione">
+          <ion-select-option  *ngFor="let v of veiculos">{{v}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+        <ion-label position="floating">Funcionário</ion-label>
+        <ion-input [(ngModel)]="funcionario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input [(ngModel)]="valor"> </ion-input>
+    </ion-item>
+
+    <ion-button  expand="full" shape="round" (click)="salvar()">
+        Salvar
+    </ion-button>
+
+
+    <!-- <ion-item *ngFor="let item of msg">
+        <ion-label>{{item}}</ion-label>
+    </ion-item> -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          Clientes
+        </ion-col>
+        <ion-col>
+          Veículo
+        </ion-col>
+        <ion-col>
+          Funcionário
+        </ion-col>
+        <ion-col>
+          Valor
+        </ion-col>
+      </ion-row>
+      <hr>
+    
+      <ion-row *ngFor="let item of msg">
+        <ion-col>
+          {{ item}}
+        </ion-col>
+      </ion-row>
+    
+    </ion-grid>
+    
+
+</ion-content>
+

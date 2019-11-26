@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Veículos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="floating">Marca</ion-label>
+        <ion-input [(ngModel)]="marca"></ion-input>
+       
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Placa</ion-label>
+        <ion-input  [(ngModel)]="placa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Cor</ion-label>
+        <ion-input [(ngModel)]="cor"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" shape="round" (click)="salvar()">
+        Salvar
+    </ion-button>  
+
+    <ion-item *ngFor="let item of msg">
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+  
+</ion-content>

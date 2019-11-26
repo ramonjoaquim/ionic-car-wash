@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Clientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+    <ion-content>
+        <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input [(ngModel)]="nome"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label position="floating">CPF</ion-label>
+            <ion-input [(ngModel)]="cpf" ></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" shape="round" (click)="salvar()">
+            Salvar
+        </ion-button>
+
+      <ion-item *ngFor="let item of msg">
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+    
+    </ion-content>
+    
